@@ -1,0 +1,10 @@
+Ekstensi Chrome "Dynamic Island" — supaya progress download tampil dengan persen yang tepat.
+
+1. Buka Chrome, ketik  chrome://extensions  di address bar.
+2. Nyalakan "Developer mode" (pojok kanan atas).
+3. Klik "Load unpacked", pilih folder ini (DynamicIsland\chrome-extension).
+4. Selesai. Kalau kamu pakai beberapa akun/profil Chrome, ulangi langkah 1-3 di tiap profil.
+
+Ekstensi hanya mengirim nama file & jumlah byte yang sudah terunduh ke aplikasi Dynamic Island
+di laptop ini sendiri (127.0.0.1). Tidak ada yang dikirim ke internet.
+Tanpa ekstensi, download tetap terdeteksi (garis biru berjalan), hanya tanpa persen.

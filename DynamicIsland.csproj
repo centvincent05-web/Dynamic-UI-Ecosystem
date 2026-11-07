@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <!-- Windows SDK target memberi akses ke API media Windows (Windows.Media.Control) -->
+    <TargetFramework>net8.0-windows10.0.22621.0</TargetFramework>
+    <SupportedOSPlatformVersion>10.0.19041.0</SupportedOSPlatformVersion>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <!-- logo aplikasi: ikon file .exe, jendela, dan Alt+Tab -->
+    <ApplicationIcon>Assets\app.ico</ApplicationIcon>
+    <AssemblyName>DynamicIsland</AssemblyName>
+    <RootNamespace>DynamicIsland</RootNamespace>
+    <Version>0.9.1</Version>
+    <!-- Hemat RAM: GC mode workstation tanpa concurrent -->
+    <ServerGarbageCollection>false</ServerGarbageCollection>
+    <ConcurrentGarbageCollection>false</ConcurrentGarbageCollection>
+    <TieredPGO>true</TieredPGO>
+    <!-- GC melepas memori ke Windows lebih cepat saat idle -->
+    <RetainVMGarbageCollection>false</RetainVMGarbageCollection>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- GC sedikit lebih hemat RAM (0-9). Nilai tinggi membuat jeda GC lebih sering → animasi bisa patah -->
+    <RuntimeHostConfigurationOption Include="System.GC.ConserveMemory" Value="3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\app.ico" />
+  </ItemGroup>
+
+  <!-- folder LiveWallpaper = proyek exe terpisah (DynamicIsland.LiveWallpaper.exe), bukan bagian proyek ini -->
+  <ItemGroup>
+    <Compile Remove="LiveWallpaper\**" />
+    <Page Remove="LiveWallpaper\**" />
+    <None Remove="LiveWallpaper\**" />
+    <EmbeddedResource Remove="LiveWallpaper\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NAudio.Core" Version="2.2.1" />
+    <PackageReference Include="NAudio.Wasapi" Version="2.2.1" />
+    <PackageReference Include="System.Management" Version="8.0.0" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,9 @@
+{
+  "manifest_version": 3,
+  "name": "Dynamic Island",
+  "version": "1.0",
+  "description": "Mengirim progress download Chrome ke Dynamic Island di laptop ini.",
+  "permissions": ["downloads"],
+  "host_permissions": ["http://127.0.0.1:48321/*"],
+  "background": { "service_worker": "background.js" }
+}

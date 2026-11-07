@@ -1,0 +1,26 @@
+# hasil build
+bin/
+obj/
+LiveWallpaper/bin/
+LiveWallpaper/obj/
+paket/
+*.zip
+
+# log & data lokal (bukan kode)
+*.log
+build-log.txt
+paket-log.txt
+perf*.csv
+perf-on.txt
+perf-label.txt
+livewallpaper-durasi.txt
+
+# file tes pribadi
+tes-musik.mp3
+
+# Visual Studio / Rider / VS Code
+.vs/
+.idea/
+.vscode/
+*.user
+*.suo
